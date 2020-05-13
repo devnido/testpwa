@@ -1,5 +1,6 @@
 package com.example.testpwa
 
+import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -20,11 +21,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun setUpView() {
         btn_action.setOnClickListener {
-           // startActivity(Intent(applicationContext, ViewModelActivity::class.java))
-
-            val url = "open://com.example.testdeeplink/saludosDesdeHuellero"
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
-
+            //val url = "https://cmr-mx-onboarding-test.fif.tech/upload-id?title=hola+desde+el+huellero"
+            //startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+            val i = Intent()
+            i.putExtra("title","hola desde huellero" )
+            setResult(Activity.RESULT_OK, i)
+            finish()
         }
       if(intent?.data != null){
 
